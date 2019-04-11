@@ -29,13 +29,5 @@ yspline(yspline>=y_size)= y_size-1;
 x = xspline;
 y = yspline;
 
-% Draw the init_snake
-% hold on;
-% plot(x_, y_, 'o', x, y, 'b.')
-% subplot(1, 1, 1);
-% imshow(I); 
-% hold on;
-% x_ = x;y_ = y;
-% plot([x_, y_], 'r');
 end
 

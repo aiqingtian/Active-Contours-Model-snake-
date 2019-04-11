@@ -61,19 +61,10 @@ sigma = 1.0;
 
 
 % Load image
-% I = imread('images/square.jpg');
-% I = imread('images/brain.png');
 I = imread('images/brain.png');
-
 if (ndims(I) == 3)
     I = rgb2gray(I);
 end
-
-% Load image
-% I = imread('images/dental.png');
-% if (ndims(I) == 3)
-%     I = rgb2gray(I);
-% end
 
 % Initialize the snake
 [x, y] = initializeSnake(I);
@@ -82,7 +73,6 @@ I_smooth = double(imgaussfilt(I, sigma));
 Eext = getExternalEnergy(I_smooth,Wline,Wedge,Wterm);
 
 % Calculate matrix A^-1 for the iteration
-% Ainv = getInternalEnergyMatrix(size(x,2), alpha, beta, gamma);
 Ainv = getInternalEnergyMatrixBonus(size(x,2), alpha, beta, gamma);
 
 % Iterate and update positions
